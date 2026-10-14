@@ -1,0 +1,32 @@
+
+{
+  "info": {
+    "name": "API Testing CI/CD Automation",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Validate GET Post",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              "pm.test('Post ID equals 1', function () {",
+              "  pm.expect(pm.response.json().id).to.eql(1);",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "url": "https://jsonplaceholder.typicode.com/posts/1"
+      }
+    }
+  ]
+}
