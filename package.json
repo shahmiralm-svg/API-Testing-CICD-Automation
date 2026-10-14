@@ -1,0 +1,7 @@
+{
+  "name": "api-testing-cicd-automation",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {"test": "newman run postman/collection.json --reporters cli,junit --reporter-junit-export reports/results.xml"},
+  "devDependencies": {"newman": "^6.2.1"}
+}
